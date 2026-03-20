@@ -1,0 +1,31 @@
+{{ define "main" }}
+  <h1 class="page-title">{{ site.Title }}</h1>
+
+  <div class="home-intro">
+    {{ .Content }}
+    <a class="home-cta" href="/contact">Book an Appointment</a>
+  </div>
+
+  <div class="quick-links">
+    <a class="quick-link-card" href="/about">
+      <span class="card-icon">✂️</span>
+      <span class="card-label">About Us</span>
+    </a>
+    <a class="quick-link-card" href="/prices">
+      <span class="card-icon">💰</span>
+      <span class="card-label">Price Guide</span>
+    </a>
+    <a class="quick-link-card" href="/banking">
+      <span class="card-icon">🏦</span>
+      <span class="card-label">Banking Details</span>
+    </a>
+    <a class="quick-link-card" href="/contact">
+      <span class="card-icon">📞</span>
+      <span class="card-label">Contact Us</span>
+    </a>
+    <a class="quick-link-card" href="/search">
+      <span class="card-icon">🔍</span>
+      <span class="card-label">Search</span>
+    </a>
+  </div>
+{{ end }}

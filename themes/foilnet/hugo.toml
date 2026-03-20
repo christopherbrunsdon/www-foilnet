@@ -1,0 +1,5 @@
+# FoilNet theme default configuration
+# Override these settings in your site's hugo.toml
+
+[params]
+  description = "Professional hair salon specialising in foiling, colouring and styling."

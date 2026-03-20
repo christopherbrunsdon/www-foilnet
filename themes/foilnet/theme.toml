@@ -1,0 +1,12 @@
+name = "FoilNet"
+license = "MIT"
+description = "Professional hair salon theme with dark aesthetic and gold accents. Includes search, responsive layout, and accessibility features."
+homepage = "https://foilnet.co.za/"
+demosite = "https://foilnet.co.za/"
+tags = ["salon", "business", "dark-theme", "responsive"]
+features = ["search", "responsive", "accessibility"]
+min_version = "0.123.0"
+
+[author]
+  name = "FoilNet"
+  email = "info@foilnet.co.za"
