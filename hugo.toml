@@ -1,0 +1,43 @@
+baseURL = "https://foilnet.co.za/"
+languageCode = "en-za"
+title = "FoilNet Hair Salon"
+theme = "foilnet"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  description = "Professional hair salon specialising in foiling, colouring and styling."
+  phone = "+27 82 000 0000"
+  email = "info@foilnet.co.za"
+  address = "123 Salon Street, Cape Town, 8001"
+
+[[menus.main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 10
+
+[[menus.main]]
+  name = "About Us"
+  pageRef = "/about"
+  weight = 20
+
+[[menus.main]]
+  name = "Price Guide"
+  pageRef = "/prices"
+  weight = 30
+
+[[menus.main]]
+  name = "Banking Details"
+  pageRef = "/banking"
+  weight = 40
+
+[[menus.main]]
+  name = "Contact Us"
+  pageRef = "/contact"
+  weight = 50
+
+[[menus.main]]
+  name = "Search"
+  pageRef = "/search"
+  weight = 60

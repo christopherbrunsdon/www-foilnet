@@ -1,0 +1,43 @@
+{{ define "main" }}
+  <h1 class="page-title">{{ .Title }}</h1>
+
+  <div class="search-wrap">
+    <input type="search" id="search-input" placeholder="Search FoilNet…" autofocus>
+  </div>
+
+  <div id="search-results"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
+  <script>
+    (async () => {
+      const res  = await fetch('/index.json');
+      const data = await res.json();
+      const fuse = new Fuse(data, {
+        keys: ['title', 'content', 'description'],
+        threshold: 0.35,
+        minMatchCharLength: 2
+      });
+
+      const input   = document.getElementById('search-input');
+      const results = document.getElementById('search-results');
+
+      function render(items) {
+        if (!items.length) {
+          results.innerHTML = '<p style="color:var(--color-muted)">No results found.</p>';
+          return;
+        }
+        results.innerHTML = items.map(({ item }) => `
+          <div class="search-result">
+            <h3><a href="${item.permalink}">${item.title}</a></h3>
+            <p>${item.description || item.content.substring(0, 140) + '…'}</p>
+          </div>`).join('');
+      }
+
+      input.addEventListener('input', () => {
+        const q = input.value.trim();
+        if (q.length < 2) { results.innerHTML = ''; return; }
+        render(fuse.search(q));
+      });
+    })();
+  </script>
+{{ end }}
