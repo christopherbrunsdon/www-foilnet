@@ -1,0 +1,150 @@
+locale: 'en-za'
+title: FoilNet 021-851-3245
+description: Foil A Great Highlite
+copyright: '&copy; Copyright FoilNet 2025'
+baseURL: 'https://foilnet.co.za/'
+#baseurl: .
+enableEmoji: true
+# List: https://gist.github.com/rxaviers/7360908
+
+# From https://github.com/adityatelange/hugo-PaperMod/wiki/Installation
+pagination:
+  pagerSize: 5
+
+caches:
+    images:
+        dir: ":cacheDir/images"
+        maxAge: "1440h"
+    getresource:
+        dir: ':cacheDir/:project'
+        maxAge: "1h"
+
+params:
+  env: production
+
+  homeInfoParams:
+    Title: "Welcome to FoilNet"
+    Content: >
+      Foil A great highlite
+
+      - Bookings need to be canceled telephonically **2 hours** in advance to avoid a service charge.
+
+
+  socialIcons:
+    - name: facebook
+      url: "https://facebook.com/foilnet"
+
+  profileMode:
+    enabled: true
+    subtitle: >
+      Foil A Great Highlite.\
+
+      Bookings need to be canceled telephonically **2 hours** in advance to avoid a service charge.\
+
+      We are open Tuesday-Saturday.
+
+    imageUrl: images/foilnet-banner.jpg
+    imageTitle: logo
+    # imageWidth: 120
+    # imageHeight: 120
+    buttons:
+      - name: Price Guide
+        url: "/price-guide"
+      - name: Contact Us
+        url: "/contact-us"
+      - name: WhatsApp Us
+        url: https://wa.me/27218513245
+        target: _blank
+      - name: Search This Site
+        url: "/search"
+
+  ShowBreadCrumbs: true
+
+  ShowReadingTime: false
+
+  ShowPostNavLinks: true
+
+  ShowCodeCopyButtons: false
+
+  comments: false
+
+  analytics:
+    google:
+      SiteVerificationTag: "XYZabc"
+    bing:
+      SiteVerificationTag: "XYZabc"
+    yandex:
+      SiteVerificationTag: "XYZabc"
+
+  footer:
+    text: "Foil A Great Highlite"
+
+  disableScrollToTop: false
+
+  # search config
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+#    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+
+  meta:
+    favicon: true
+
+  # https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#posts-from-only-one-foldersection-visible-on-home-page
+  # default to the section with the most pages
+  mainSections:
+    - overview
+    - contact-us
+
+
+# Required for Search:
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+markup:
+  goldmark:
+    renderer:
+      Unsafe: true
+    parser:
+      attribute:
+        block: true
+  highlight:
+    #    style: github
+    noClasses: false
+
+
+theme: PaperMod
+
+enableInlineShortcodes: true
+pluralizelisttitles: false
+
+menu:
+  main:
+    - identifier: overview
+      name: About Us
+      url: /overview
+      weight: 1
+    - identifier: price
+      name: Price Guide
+      url: /price-guide/
+      weight: 20
+    - identifier: bank-details
+      name: Bank Details
+      url: /bank-details/
+      weight: 50
+    - identifier: contact
+      name: Contact Us
+      url: /contact-us/
+      weight: 90
+    - identifier: search
+      name: Search
+      url: search
+      weight: 999
